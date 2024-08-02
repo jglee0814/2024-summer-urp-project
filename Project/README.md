@@ -51,7 +51,7 @@ hidden layer에는 convolutional layer가 6개 사용되었다. 이때 dilation 
 Loss function에는 KL divergence을 사용하였다.
 
 ## 4. 결과 분석
-<img src="https://github.com/user-attachments/assets/2a4f802f-bdd0-4f3d-8d1e-0844ba2ee4e9" alt="image" width="800"/>
+<img src="https://github.com/user-attachments/assets/2a4f802f-bdd0-4f3d-8d1e-0844ba2ee4e9" alt="image" width="700"/>
 <br/><br>
 학습 결과, MLP는 약 88%에, WaveNet은 91%에 수렴하는 효율성을 보여주었다. WaveNet에서의 효율성이 더 높은 이유 중 하나로 시간의 인과성 이용을 들어볼 수 있다. 
 MLP는 각 timestamp에 대해 독립적으로, WaveNet은 시간의 상호관계를 고려하여 데이터를 처리하기 때문에 이와 같은 차이가 나타난다고 볼 수 있다.
