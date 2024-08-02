@@ -1,5 +1,5 @@
 # HAR(Human Activity Recognition) 모델 구축
-연구기간 : 24.06.24(월)~24.07.30(화)
+연구기간 : 24.06.24(월)~24.07.30(화)<br>
 연구원: 이정우
 
 1. Introduction <br/>
