@@ -45,13 +45,13 @@ WaveNet의 효율을 분석하기 위해, 다른 간단한 구조인 MLP(Multi-L
 MLP는 WaveNet과 달리 시간의 인과성을 고려하지 못하며, autoregressive하지 않아 이전의 데이터를 활용하지 못한다. 
 MLP의 hidden layer의 개수는 2개이며, input과 output 를 포함하여 모든 layer에는 선형 변환을 사용하였다. 다음은 MLP의 구조를 도식화한 그림이다.<br/>
 <img src="https://github.com/user-attachments/assets/0bf4cf5c-a9ca-4d68-8e62-38aaebed5512" alt="image" width="800"/>
-<br><br>
+<br>
 WaveNet에서는 fc(fully-connected) layer이 input과 output layer로 사용되었으며,
 hidden layer에는 convolutional layer가 6개 사용되었다. 이때 dilation factor를 [1, 2, 4, 8, 16, 32]로 설정함으로써 dilated convolutional layer를 만들었다. 또한 앞 시간만을 참조하기 위해 shifting을 사용하였고, 그만큼 0을 padding(\#1)하였다. 이 때 데이터의 손실이 일어날 수 있어, 다른 방법으로 평균값을 padding(\#2)하는 방법 또한 고려하였다.
 Loss function에는 KL divergence을 사용하였다.
 
 ## 4. 결과 분석
-<img src="https://github.com/user-attachments/assets/2a4f802f-bdd0-4f3d-8d1e-0844ba2ee4e9" alt="image" width="700"/>
-<br/><br>
+<img src="https://github.com/user-attachments/assets/4d4c192a-06a9-4db2-9843-931b35244b08" alt="image" width="700"/>
+<br/>
 학습 결과, MLP는 약 88%에, WaveNet은 91%에 수렴하는 효율성을 보여주었다. WaveNet에서의 효율성이 더 높은 이유 중 하나로 시간의 인과성 이용을 들어볼 수 있다. 
 MLP는 각 timestamp에 대해 독립적으로, WaveNet은 시간의 상호관계를 고려하여 데이터를 처리하기 때문에 이와 같은 차이가 나타난다고 볼 수 있다.
