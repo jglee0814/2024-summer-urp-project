@@ -47,7 +47,7 @@ MLP의 hidden layer의 개수는 2개이며, input과 output 를 포함하여 �
 <img src="https://github.com/user-attachments/assets/0bf4cf5c-a9ca-4d68-8e62-38aaebed5512" alt="image" width="800"/>
 <br><br>
 WaveNet에서는 fc(fully-connected) layer이 input과 output layer로 사용되었으며,
-hidden layer에는 convolutional layer가 6개 사용되었다. 이때 dilation factor를 [1, 2, 4, 8, 16, 32]로 설정함으로써 dilated convolutional layer를 만들었다. 
+hidden layer에는 convolutional layer가 6개 사용되었다. 이때 dilation factor를 [1, 2, 4, 8, 16, 32]로 설정함으로써 dilated convolutional layer를 만들었다. 또한 앞 시간만을 참조하기 위해 shifting을 사용하였고, 그만큼 0을 padding하였다.
 Loss function에는 KL divergence을 사용하였다.
 
 ## 4. 결과 분석
